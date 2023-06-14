@@ -2,7 +2,7 @@ import { GoPlus } from "react-icons/go";
 import Contacts from "./Contacts";
 import { useState } from "react";
 
-const Header = ({ contacts, addContact, handleClick, showInput, handleBackClick, search, setSearch }) => {
+const Header = ({ contacts, addContact, handleClick, showInput, handleBackClick, search, setSearch, deleteContact }) => {
   const [inputName, setInputName] = useState("");
   const [inputNumber, setInputNumber] = useState("");
 
@@ -52,7 +52,7 @@ const Header = ({ contacts, addContact, handleClick, showInput, handleBackClick,
         )}
       </div>
 
-      <Contacts search={search} setSearch={setSearch} contacts={contacts} />
+      <Contacts deleteContact={deleteContact} search={search} setSearch={setSearch} contacts={contacts} />
     </div>
   );
 };

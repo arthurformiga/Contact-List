@@ -32,6 +32,11 @@ const App = () => {
     setShowInput(false);
   }
 
+  const deleteContact = (id) => {
+    const newContact = contacts.filter((contact) => (contact.id !== id ? id : null))
+    setContacts(newContact);
+  }
+
   const addContact = (name, number) => {
     const newContact = [
       ...contacts,
@@ -47,6 +52,7 @@ const App = () => {
   return (
     <div className='app'>
       <Header
+        deleteContact={deleteContact}
         handleBackClick={handleBackClick}
         setSearch={setSearch}
         search={search}

@@ -72,6 +72,12 @@
   margin: 0.1rem 0;
 }
 
+.delete-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 
 //input[type="number"]::-webkit-inner-spin-button, 
 //input[type="number"]::-webkit-outer-spin-button {
