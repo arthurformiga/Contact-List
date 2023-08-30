@@ -19,6 +19,11 @@ const App = () => {
       name: "Leonardo",
       number: "55 (83) 987654321",
     },
+    {
+      id: 4,
+      name: "Gabriel",
+      number: "55 (83) 987644211",
+    },
   ]);
 
   const [showInput, setShowInput] = useState(false);
