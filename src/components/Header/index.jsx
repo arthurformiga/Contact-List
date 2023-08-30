@@ -1,8 +1,9 @@
 import { GoPlus } from "react-icons/go";
-import Contacts from "./Contacts";
 import { useState } from "react";
 
-const Header = ({ contacts, addContact, handleClick, showInput, handleBackClick, search, setSearch, deleteContact }) => {
+import styles from './header.module.css'
+
+const Header = ({ showInput, handleClick, handleBackClick, addContact }) => {
   const [inputName, setInputName] = useState("");
   const [inputNumber, setInputNumber] = useState("");
 
@@ -12,9 +13,10 @@ const Header = ({ contacts, addContact, handleClick, showInput, handleBackClick,
     setInputName("");
     setInputNumber("");
   };
+
   return (
-    <div className='container'>
-      <div className='header-container'>
+    <div className={styles.container}>
+      <div className={styles.headerContainer}>
         {!showInput ? (
           <>
             <h2>Meus contatos</h2>
@@ -26,7 +28,8 @@ const Header = ({ contacts, addContact, handleClick, showInput, handleBackClick,
             />
           </>
         ) : (
-          <form onSubmit={handleSubmit} className='add-input'>
+          <form onSubmit={handleSubmit} className={styles.formContainer}>
+            <div className={styles.addInput}>
             <input
               placeholder='Nome'
               type='text'
@@ -34,25 +37,28 @@ const Header = ({ contacts, addContact, handleClick, showInput, handleBackClick,
               onChange={(e) => setInputName(e.target.value)}
             />
             <input
-              placeholder='Adicionar telefone'
+              placeholder='Telefone'
               type='text'
               value={inputNumber}
               onChange={(e) => setInputNumber(e.target.value)}
-            />
-            <div>
-              <button disabled={inputName === "" || inputNumber ===""}
+            /> 
+            </div>
+            <div className={styles.buttonArea}>
+              <button
+                disabled={inputName === "" || inputNumber === ""}
                 onClick={() => addContact(inputName, inputNumber)}
                 type='submit'
               >
                 Salvar
               </button>
-              <button type="button" onClick={() => handleBackClick()}>Voltar</button>
+              <button type='button' onClick={() => handleBackClick()}>
+                Voltar
+              </button>
             </div>
+           
           </form>
         )}
       </div>
-
-      <Contacts deleteContact={deleteContact} search={search} setSearch={setSearch} contacts={contacts} />
     </div>
   );
 };

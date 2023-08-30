@@ -1,0 +1,86 @@
+.inputAreaContacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.inputAreaContacts input {
+  margin: auto 5rem;
+  width: 260px;
+  height: 35px;
+  background-color: #cfcfcf;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 0.3rem;
+  border-radius: 3rem;
+  transition: ease-in-out 0.2s;
+}
+
+.inputAreaContacts input:hover {
+  border: 1px solid #212121;
+}
+
+.icon {
+  margin-left: -7rem;
+  margin-right: 4rem;
+}
+
+.contacts {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto 4rem;
+}
+
+.contactList {
+  border-bottom: 1px solid #cfcfcf;
+  padding: 1rem 0;
+  margin: auto 1rem;
+}
+
+.contactList p:nth-child(3) {
+  color: #919191;
+}
+
+.deleteContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto 2rem;
+}
+
+.deleteButton {
+  cursor: pointer;
+  color: #212121;
+  transition: color 0.3s;
+}
+
+.deleteButton:hover {
+  color: #fff;
+}
+
+@media (max-width: 414px) {
+  .contacts {
+    max-width: 300px;
+    width: 100%;
+    margin: auto auto auto 2rem;
+  }
+
+  .contactList {
+    font-size: 1.2rem;
+    margin: 1.2rem auto;
+    border: none;
+  }
+
+  .deleteButton {
+    font-size: 1.5rem;
+    margin-top: -1.5rem ;
+  }
+
+  .inputAreaContacts input {
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+    width: 100%;
+  }
+}

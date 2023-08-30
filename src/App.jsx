@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 import Header from "./components/Header";
+import Contacts from "./components/Contacts";
 
 const App = () => {
   const [contacts, setContacts] = useState([
@@ -30,12 +30,12 @@ const App = () => {
 
   const handleBackClick = () => {
     setShowInput(false);
-  }
+  };
 
   const deleteContact = (id) => {
-    const newContact = contacts.filter((contact) => (contact.id !== id ? id : null))
+    const newContact = contacts.filter((contact) => contact.id !== id);
     setContacts(newContact);
-  }
+  };
 
   const addContact = (name, number) => {
     const newContact = [
@@ -50,18 +50,20 @@ const App = () => {
   };
 
   return (
-    <div className='app'>
+    <>
       <Header
-        deleteContact={deleteContact}
-        handleBackClick={handleBackClick}
-        setSearch={setSearch}
-        search={search}
         showInput={showInput}
         handleClick={handleClick}
+        handleBackClick={handleBackClick}
         addContact={addContact}
-        contacts={contacts}
       />
-    </div>
+      <Contacts
+        search={search}
+        setSearch={setSearch}
+        contacts={contacts}
+        deleteContact={deleteContact}
+      />
+    </>
   );
 };
 
